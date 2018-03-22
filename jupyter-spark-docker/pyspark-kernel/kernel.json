@@ -1,0 +1,16 @@
+{
+  "argv": [
+    "python",
+    "-m",
+    "ipykernel_launcher",
+    "-f",
+    "{connection_file}"
+  ],
+  "display_name": "Pyspark",
+  "language": "python",
+  "env": {
+    "PYSPARK_SUBMIT_ARGS": "--master mesos://localhost:5050 --conf spark.cores.max=3 --conf spark.executor.cores=1 --conf spark.executor.uri=hdfs://localhost:8020/spark-2.2.0-bin-hadoop2.7.tgz pyspark-shell",
+    "PYTHONSTARTUP": "/usr/local/share/jupyter/kernels/python3/initialize-kernel.py",
+    "PYSPARK_PYTHON":"python3.5"
+  }
+}

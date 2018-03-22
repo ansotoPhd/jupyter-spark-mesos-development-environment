@@ -1,0 +1,21 @@
+version: "2"
+
+services:
+
+  namenode:
+    image: uhopper/hadoop-namenode:2.8.1
+    network_mode: host
+    volumes:
+      - ./namenode:/hadoop/dfs/name
+    env_file:
+      - ./hadoop.env
+    environment:
+      - CLUSTER_NAME=hadoop-cluster
+
+  datanode1:
+    image: uhopper/hadoop-datanode:2.8.1
+    network_mode: host
+    volumes:
+      - ./datanode1:/hadoop/dfs/data
+    env_file:
+      - ./hadoop.env
